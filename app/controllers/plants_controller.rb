@@ -2,12 +2,13 @@ class PlantsController < ApplicationController
   def create
     @garden = Garden.find(params[:garden_id])
     @plant = Plant.new(plant_params)
-    # @plant.garden = @garden
+
+    # we can write the line below because a plant belongs to a garden
+    @plant.garden = @garden
+
     if @plant.save
       redirect_to garden_path(@garden)
-      # redirect_to @garden
     else
-    raise
       render 'gardens/show'
     end
   end

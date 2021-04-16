@@ -18,9 +18,8 @@
 
 <div class="container">
   <div class="row">
-
     <% @garden.plants.each do |plant| %>
-    <div class="col-lg-4 col-md-6 col-sm-12 my-3 mx-auto">
+      <div class="col-lg-4 col-md-6 col-sm-12 my-3 mx-auto">
         <div class="card-category mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= plant.image_url %>)">
           <%= plant.name.capitalize %>
           <%= link_to 'x', plant_path(plant),
@@ -29,8 +28,7 @@
             class: 'card-remove-link'  %>
         </div>
 
-    </div>
+      </div>
     <% end %>
-
   </div>
 </div>
